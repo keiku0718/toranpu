@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/*========= レイアウトのためのCSS ===============*/
+body {
+  background: #00A3D9;
+  word-wrap: break-word;
+}
+
+/*========= 粒子を描画するエリア設定 ===============*/
+#particle {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom; /*canvasタグ下に余白が生まれるのを防ぐ*/
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: grid;
+}
+
+.btn .btn-str {
+  height: 70px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 40px;
+  margin: 10px auto;
+  transition: all 0.3s;
+  color: black;
+  font-size: large;
+  box-shadow: 2px 2px 0 0 black;
+  border-radius: 7px;
+}
+
+.btn .btn-str:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.btn .btn-play {
+  height: 70px;
+  width: 300px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 40px;
+  margin: 10px auto;
+  transition: all 0.3s;
+  color: black;
+  font-size: large;
+  box-shadow: 2px 2px 0 0 black;
+  border-radius: 7px;
+}
+
+.btn .btn-play:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}/*# sourceMappingURL=style.css.map */
+
+img{
+  width: 100%;
+  height: 100%;
+}
+.png{
+  height: 300px;
+  width: 300px;
+  text-align: right;
+}
