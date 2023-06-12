@@ -70,10 +70,14 @@
         const card_type = [0 , 13 , 26 , 39];
         let count = 0;
         let but_cnt  = 0;
+        let success = 0;
+        let miss = 0;
         //カードを並べる数
         let set_count = 2;
         const test_but = document.getElementById('test_but');
         //console.log(test_but);
+        const high_but = document.getElementById('high_but');
+        const low_but = document.getElementById('low_but');
 
          //トランプマーク毎数字生成
         for(let i = 0 ; i < card_type.length ; i++){
@@ -98,7 +102,6 @@
             }
         }
 
-//カードシャッフルコードここまで
 
         //tableタグでカードを並べる
         const table = document.getElementById('table');
@@ -145,6 +148,88 @@
         //console.log(count +":"+ document.getElementById(count - 1));
 
 
+        //highボタンクリック時
+        high_but.addEventListener('click' , () => {
+            if(miss > 2) return;
+            
+            if(cards[count - 2].num <= cards[count - 1].num){
+                success++;
+                console.log("success:" + success);
+
+            }else{
+                miss++;
+                console.log("falt:" + miss);
+            }
+
+            open_cards();
+
+            if(miss === 3){
+                console.log("GAME OVER\nresult\n" + success + " successful!");
+                alert("GAME OVER\n-- result --\n" + success + " successful!");
+            }
+
+        })
+
+
+        //lowボタンクリック時
+        low_but.addEventListener('click' , () => {
+            if(miss > 2) return;
+
+            if(cards[count - 2].num <= cards[count - 1].num){
+                miss++;
+                console.log("falt:" + miss);
+
+            }else{
+                success++;
+                console.log("success:" + success);
+            }
+                
+            open_cards();
+
+            if(miss === 3){
+                console.log("GAME OVER\nresult\n" + success + " successful!");
+                alert("GAME OVER\n-- result --\n" + success + " successful!");
+            }
+        })
+
+
+        //ボタンクリック時次のカード表示
+        function open_cards(){
+            but_cnt++;
+
+            set_count = 1;
+            //console.log('but_cnt = ' + but_cnt);
+            //console.log(document.getElementById(count - 1));
+
+            if(count === but_cnt + 1){
+                let el = document.getElementById(count - 1); 
+                //console.log(el);
+                let d_card = cards[count - 1];
+                // console.log(d_card.type +'+'+ d_card.num +'=');
+                // console.log(d_card.type + d_card.num);
+                //表で表示
+                el.innerHTML = '<img src = ' + images[d_card.type + d_card.num].src
+                                        + ' width = "90px" height = "130px">';
+            }
+
+            if(but_cnt % 5 == 0){
+                table.appendChild(tr);
+                tr = document.createElement('tr'); 
+                td = document.createElement('td');
+                tr.appendChild(td);
+                card_set();
+                table.appendChild(tr);
+            }else{
+                card_set();
+            }
+
+        }
+
+
+
+
+
+/*デバック用*****************************
         //testボタンクリック時次のカード表示
         test_but.addEventListener('click' , () => {
             but_cnt++;
@@ -175,3 +260,4 @@
             }
 
         })
+**************************/
