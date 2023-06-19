@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/*リスト項目*/
+.nav li {
+    display: inline;		
+    list-style-type: none;
+    padding-right: 10%;    
+}
+
+.nav ul{
+    text-align: right;
+    margin-bottom: 0;
+}
+
+li a{
+    text-decoration: none;
+}
+
+#table{
+    padding: 20px;
+    margin-left: 20%;
+    background-color: green;
+    border-radius: 6px;
+}
+
+.contents{
+    margin-top: 20px;
+    text-align: center;
+}
+#high_but , #low_but , input{
+    height: 30px;
+}
+

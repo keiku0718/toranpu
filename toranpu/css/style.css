@@ -8,16 +8,5 @@ body{
 
 h1{
     text-align: center;
-}
-
-#high_but{
-    height: 30px;
-}
-
-#low_but{
-    height: 30px;
-}
-
-input{
-    height: 30px;
+    margin-top: 0;
 }
