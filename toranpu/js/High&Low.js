@@ -155,17 +155,28 @@
             if(cards[count - 2].num <= cards[count - 1].num){
                 success++;
                 console.log("success:" + success);
+                let text = document.getElementById("result");
+                text.innerHTML = "おめと！！！";
 
             }else{
                 miss++;
                 console.log("falt:" + miss);
+                let text = document.getElementById("result");
+                text.innerHTML = "ざんねん！";
+
             }
 
             open_cards();
 
             if(miss === 3){
                 console.log("GAME OVER\nresult\n" + success + " successful!");
-                alert("GAME OVER\n-- result --\n" + success + " successful!");
+                // alert("GAME OVER\n-- result --\n" + success + " successful!");
+                let text = document.getElementById("result");
+                text.innerHTML = "げーむ　おーばー";
+
+                let reset = document.getElementById("reset");
+                reset.innerHTML = "<input type = \"button\" onclick = \"location.href = \'index.html\'\" value = \"Continuity\">";
+
             }
 
         })
@@ -178,17 +189,27 @@
             if(cards[count - 2].num <= cards[count - 1].num){
                 miss++;
                 console.log("falt:" + miss);
+                let text = document.getElementById("result");
+                text.innerHTML = "ざんねん！";
 
             }else{
                 success++;
                 console.log("success:" + success);
+                let text = document.getElementById("result");
+                text.innerHTML = "おめと！！！";
             }
                 
             open_cards();
 
             if(miss === 3){
                 console.log("GAME OVER\nresult\n" + success + " successful!");
-                alert("GAME OVER\n-- result --\n" + success + " successful!");
+                // alert("GAME OVER\n-- result --\n" + success + " successful!");
+                let text = document.getElementById("result");
+                text.innerHTML = "げーむ　おーばー";
+
+                let reset = document.getElementById("reset");
+                reset.innerHTML = "<input type = \"button\" onclick = \"location.href = \'index.html\'\" value = \"Continuity\">";
+
             }
         })
 
