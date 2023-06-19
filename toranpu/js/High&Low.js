@@ -72,6 +72,7 @@
         let but_cnt  = 0;
         let success = 0;
         let miss = 0;
+        let ans_flg = false;
         //カードを並べる数
         let set_count = 2;
         const test_but = document.getElementById('test_but');
@@ -154,16 +155,15 @@
             
             if(cards[count - 2].num <= cards[count - 1].num){
                 success++;
+                ans_flg = true;
                 console.log("success:" + success);
-                let text = document.getElementById("result");
-                text.innerHTML = "おめと！！！";
+                answer();
 
             }else{
                 miss++;
+                ans_flg = false;
                 console.log("falt:" + miss);
-                let text = document.getElementById("result");
-                text.innerHTML = "ざんねん！";
-
+                answer();
             }
 
             open_cards();
@@ -171,12 +171,7 @@
             if(miss === 3){
                 console.log("GAME OVER\nresult\n" + success + " successful!");
                 // alert("GAME OVER\n-- result --\n" + success + " successful!");
-                let text = document.getElementById("result");
-                text.innerHTML = "げーむ　おーばー";
-
-                let reset = document.getElementById("reset");
-                reset.innerHTML = "<input type = \"button\" onclick = \"location.href = \'index.html\'\" value = \"Continuity\">";
-
+                result();
             }
 
         })
@@ -188,15 +183,15 @@
 
             if(cards[count - 2].num <= cards[count - 1].num){
                 miss++;
+                ans_flg = false;
                 console.log("falt:" + miss);
-                let text = document.getElementById("result");
-                text.innerHTML = "ざんねん！";
+                answer();
 
             }else{
                 success++;
+                ans_flg = true;
                 console.log("success:" + success);
-                let text = document.getElementById("result");
-                text.innerHTML = "おめと！！！";
+                answer();
             }
                 
             open_cards();
@@ -204,15 +199,32 @@
             if(miss === 3){
                 console.log("GAME OVER\nresult\n" + success + " successful!");
                 // alert("GAME OVER\n-- result --\n" + success + " successful!");
-                let text = document.getElementById("result");
-                text.innerHTML = "げーむ　おーばー";
-
-                let reset = document.getElementById("reset");
-                reset.innerHTML = "<input type = \"button\" onclick = \"location.href = \'index.html\'\" value = \"Continuity\">";
-
+                result();
             }
         })
 
+        function answer(){
+            if(ans_flg === true){
+                let message = document.getElementById("message");
+                message.innerHTML = "おめと！！！";
+
+            }else{
+                let message = document.getElementById("message");
+                message.innerHTML = "ざんねん！";
+            }
+
+        }
+
+        function result(){
+            let message = document.getElementById("message");
+            message.innerHTML = "げーむ　おーばー";
+            let result = document.getElementById("result");
+            result.innerHTML = "きろく　" + success + "かい";
+
+
+            let reset = document.getElementById("reset");
+            reset.innerHTML = "<input type = \"button\" onclick = \"location.href = \'play.html\'\" value = \"Continuity\">";
+        }
 
         //ボタンクリック時次のカード表示
         function open_cards(){
@@ -246,7 +258,13 @@
 
         }
 
-
+        help_but.addEventListener('click' , () => {
+            let confirm_flg = confirm("このページの内容は保存されません。");
+            
+            if(confirm_flg === true){
+                location.href = "help.html";
+            }
+        })
 
 
 

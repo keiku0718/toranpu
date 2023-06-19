@@ -1,12 +1,69 @@
 @charset "UTF-8";
 
+html{
+	font-family: Georgia;
+}
+
 body{
     background-color: aquamarine;
     margin: 0 auto;
 	max-width: 960px;
 }
 
+/*リスト項目*/
+.nav li {
+    display: inline;		
+    list-style-type: none;
+    padding-right: 10%;    
+}
+
+.nav ul{
+    background-color: #00A3D9;
+    text-align: right;
+    margin-top: 0;
+    padding: 5px;
+}
+
+li a{
+    text-decoration: none;
+}
+
+/*リスト項目色変更*/
+	/*通常時*/
+	.nav a:link{
+		color: white;
+		text-decoration: none;
+	}
+	
+	/*訪問済*/
+	.nav a:visited{
+		color: #bff0f1;
+		text-decoration: none;
+	}
+	
+	/*リンク上にポインタがある時*/
+	.nav a:hover{
+		color: #ffd700;
+		text-decoration: none;
+	}
+	
+	/*リンクが押された時*/
+	.nav a:active{
+		color: #ffa500;
+		text-decoration: none;
+	}
+
 h1{
     text-align: center;
     margin-top: 0;
+}
+
+.footer{
+	position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+	margin-top: 40px;
+}
+
+.footText{
+	text-align: center;
 }

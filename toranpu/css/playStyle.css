@@ -1,21 +1,5 @@
 @charset "UTF-8";
 
-/*リスト項目*/
-.nav li {
-    display: inline;		
-    list-style-type: none;
-    padding-right: 10%;    
-}
-
-.nav ul{
-    text-align: right;
-    margin-bottom: 0;
-}
-
-li a{
-    text-decoration: none;
-}
-
 #table{
     padding: 20px;
     margin-left: 20%;
@@ -27,7 +11,23 @@ li a{
     margin-top: 20px;
     text-align: center;
 }
+
 #high_but , #low_but , input{
     height: 30px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 40px;
+    margin: 10px auto;
+    transition: all 0.3s;
+    color: black;
+    font-size: large;
+    box-shadow: 2px 2px 0 0 black;
+    border-radius: 7px;
+    padding-bottom: 30px;
+    margin: 0 15px;
 }
 
+button:hover , input:hover{
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
